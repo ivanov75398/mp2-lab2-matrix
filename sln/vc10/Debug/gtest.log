@@ -1,2 +1,8 @@
-﻿  gtest-all.cc
-  gtest.vcxproj -> D:\Files\git\mp2-lab2-matrix\sln\vc10\Debug\gtest.lib
+﻿Build started 24.10.2018 14:39:31.
+     1>Project "C:\ivanov75398\mp2-lab2-matrix\sln\vc10\gtest.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(64,5): error MSB8020: The build tools for v140 (Platform Toolset = 'v140') cannot be found. To build using the v140 build tools, please install v140 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Upgrade Solution...".
+     1>Done Building Project "C:\ivanov75398\mp2-lab2-matrix\sln\vc10\gtest.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.01

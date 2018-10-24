@@ -66,7 +66,7 @@ TVector<ValType>::TVector(int s, int si)
 	if ((si < 0) || (si > s)) { throw - 2; }
 	s=Size;
 	si=StartIndex;
-	pVector = new ValType[Size];
+	pVector = new ValType[Size - StartIndex];
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> //конструктор копирования
@@ -74,7 +74,7 @@ TVector<ValType>::TVector(const TVector<ValType> &v)
 {
 	Size = v.Size;
 	StartIndex = v.StartIndex;
-	pVector = new ValType[Size];
+	pVector = new ValType[Size - StartIndex];
 	for (int i = 0; i < Size - StartIndex; i++)
 	{
 		pVector[i] = v.pVector[i];
@@ -132,7 +132,7 @@ TVector<ValType>& TVector<ValType>::operator=(const TVector &v)
 	Size = v.Size;
 	StartIndex = v.StartIndex;
 	delete[]pVector;
-	pVector = new ValType[Size];
+	pVector = new ValType[Size - StartIndex];
 	for (int i = 0; i < Size - StartIndex; i++)
 	{
 		pVector[i] = v.pVector[i];
@@ -232,14 +232,14 @@ TMatrix<ValType>::TMatrix(int s): TVector<TVector<ValType> >(s)
 {
 	if ((s < 0) || (s > MAX_MATRIX_SIZE)) { throw - 3;}
 	s = Size;
-	int k = 1;
+	int j = 0;
 	for (int i = 1; i < Size - StartIndex; i++)
 	{
-		for (int j = 0; j < k; j++)
+		for (j; j < Size - StartIndex; j++)
 		{
-			pVector[j] = 0;
+			pVector[j] = j;
 		}
-		k++;
+		j++;
 	}
 } /*-------------------------------------------------------------------------*/
 
@@ -284,7 +284,7 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
 	Size = mt.Size;
 	StartIndex = mt.StartIndex;
 	delete[]pVector;
-	pVector = new TVector<ValType>[Size];
+	pVector = new TVector<ValType>[Size - StartIndex];
 	for (int i = 0; i < Size - StartIndex; i++)
 	{
 		pVector[i] = mt.pVector[i];
@@ -296,14 +296,14 @@ template <class ValType> // сложение
 TMatrix<ValType> TMatrix<ValType>::operator+(const TMatrix<ValType> &mt)
 {
 	TMatrix res;
-	int k = 0;
+	int j = 0;
 	for (int i = 0; i < Size - StartIndex; i++)
 	{
-		for (int j = 0; j < Size - StartIndex; j++)
+		for (j; j < Size - StartIndex; j++)
 		{
-			res.pVector[j + k] = pVector[j + k] + mt.pVector[j + k];
+			res.pVector[j] = pVector[j] + mt.pVector[j];
 		}
-		k++;
+		j++;
 	}
 	return res;
 } /*-------------------------------------------------------------------------*/
@@ -312,14 +312,14 @@ template <class ValType> // вычитание
 TMatrix<ValType> TMatrix<ValType>::operator-(const TMatrix<ValType> &mt)
 {
 	TMatrix res;
-	int k = 0;
+	int j = 0;
 	for (int i = 0; i < Size - StartIndex; i++)
 	{
-		for (int j = 0; j < Size - StartIndex; j++)
+		for (j; j < Size - StartIndex; j++)
 		{
-			res.pVector[j + k] = pVector[j + k] - mt.pVector[j + k];
+			res.pVector[j] = pVector[j] - mt.pVector[j];
 		}
-		k++;
+		j++;
 	}
 	return res;
 } /*-------------------------------------------------------------------------*/

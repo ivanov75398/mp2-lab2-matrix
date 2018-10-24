@@ -1,4 +1,8 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (gtest.vcxproj, test_utmatrix.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  sample_matrix.cpp
-  sample_utmatrix.vcxproj -> D:\Files\git\mp2-lab2-matrix\sln\vc10\Debug\sample_utmatrix.exe
-  sample_utmatrix.vcxproj -> D:\Files\git\mp2-lab2-matrix\sln\vc10\Debug\sample_utmatrix.pdb (Full PDB)
+﻿Build started 24.10.2018 13:27:02.
+     1>Project "C:\ivanov75398\mp2-lab2-matrix\sln\vc10\sample_utmatrix.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(64,5): error MSB8020: The build tools for v140 (Platform Toolset = 'v140') cannot be found. To build using the v140 build tools, please install v140 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Upgrade Solution...".
+     1>Done Building Project "C:\ivanov75398\mp2-lab2-matrix\sln\vc10\sample_utmatrix.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.39
