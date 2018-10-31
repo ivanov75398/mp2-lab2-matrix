@@ -69,7 +69,7 @@ TVector<ValType>::TVector(int s, int si)
 	pVector = new ValType[Size - StartIndex];
 	for (int i = 0; i < Size - StartIndex; i++)
 	{
-		pVector[i] = 0;
+		pVector[i] = 1;
 	}
 } /*-------------------------------------------------------------------------*/
 
@@ -273,19 +273,21 @@ TMatrix<ValType>& TMatrix<ValType>::operator=(const TMatrix<ValType> &mt)
 template <class ValType> // сложение
 TMatrix<ValType> TMatrix<ValType>::operator+(const TMatrix<ValType> &mt)
 {
-	TMatrix<ValType> res(Size-StartIndex);
-	for (int i = 0; i < Size - StartIndex; i++)
-		res.pVector[i] = pVector[i] + mt.pVector[i];
-	return res;
+	//TMatrix<ValType> res(Size-StartIndex);
+	//for (int i = 0; i < Size - StartIndex; i++)
+		//res.pVector[i] = pVector[i] + mt.pVector[i];
+	//return res;
+	return TVector<TVector<ValType> >::operator+(mt);
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> // вычитание
 TMatrix<ValType> TMatrix<ValType>::operator-(const TMatrix<ValType> &mt)
 {
-	TMatrix<ValType> res(Size - StartIndex);
-	for (int i = 0; i < Size - StartIndex; i++)
-		res.pVector[i] = pVector[i] - mt.pVector[i];
-	return res;
+	//TMatrix<ValType> res(Size - StartIndex);
+	//for (int i = 0; i < Size - StartIndex; i++)
+		//res.pVector[i] = pVector[i] - mt.pVector[i];
+	//return res;
+	return TVector<TVector<ValType> >::operator+(mt);
 } /*-------------------------------------------------------------------------*/
 
 // TVector О3 Л2 П4 С6
