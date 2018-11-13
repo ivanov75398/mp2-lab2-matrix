@@ -1,7 +1,9 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (gtest.vcxproj, sample_utmatrix.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   test_tvector.cpp
   test_tmatrix.cpp
+  test_main.cpp
   Generating Code...
-C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (sample_utmatrix.vcxproj, test_utmatrix.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+test_main.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+gtest.lib(gtest-all.obj) : warning LNK4099: PDB 'gtest.pdb' was not found with 'gtest.lib(gtest-all.obj)' or at 'D:\Files\git\mp2-lab2-matrix\sln\vc10\Debug\gtest.pdb'; linking object as if no debug info
   test_utmatrix.vcxproj -> D:\Files\git\mp2-lab2-matrix\sln\vc10\Debug\test_utmatrix.exe
   test_utmatrix.vcxproj -> D:\Files\git\mp2-lab2-matrix\sln\vc10\Debug\test_utmatrix.pdb (Partial PDB)
